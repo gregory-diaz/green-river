@@ -1,0 +1,29 @@
+{
+  "development": {
+    "username": "gregorydiaz",
+    "password": null,
+    "database": "todos-dev",
+    "port":5432,
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+    "development": {
+    "use_env_variable": "postgresql://gregorydiaz@127.0.0.1/todos-dev"
+    },
+  "test": {
+    "username": "gregorydiaz",
+    "password": null,
+    "database": "todos-test",
+    "port":5432,
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "gregorydiaz",
+    "password": null,
+    "database": "todos-production",
+    "port":5432,
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}
