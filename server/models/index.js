@@ -1,3 +1,11 @@
+/* In this file, we are requiring the modules we're going to be using.
+   Then, we're reading the configuration specific to our current Node environment.
+   If we don't have a Node environment defined, we're defaulting to development.
+   Then, we are establishing a connection with our database, after which we read our models folder,
+   discovering and importing any and all the models in it, adding them to the db
+   object and applying relationships between the models, if such relationships exist.*/
+
+
 const fs = require('fs');
 const path = require('path');
 const Sequelize = require('sequelize');
