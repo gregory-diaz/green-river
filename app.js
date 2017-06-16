@@ -10,7 +10,9 @@ const app = express();
 //Configure Express to use PUG
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
+
 app.use(logger('dev'));
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:false}));
 
@@ -21,9 +23,9 @@ app.get("/", (req, res) => {
 
 // Require our routes into the application 
 require('./server/routes')(app);
-app.get('*', (req, res) => res.status(200).send({
-    message: 'Welcome to the beginning of everything .'
-}));
+// app.get('*', (req, res) => res.status(200).send({
+//     message: 'Welcome to the beginning of everything .'
+// }));
 
 
 
