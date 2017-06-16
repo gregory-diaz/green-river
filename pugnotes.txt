@@ -1,0 +1,147 @@
+Reference -  www.hostilejourney.com/getting-started-with-pug-template-engine/
+
+
+PUG API
+
+Compile PUG file:
+
+Once we have a .pug file created and saved in the /views folder we can compile
+it by running the following command in the terminal:
+
+pug filename.pug
+
+This command will create the corresponding HTML file next to the PUG one.
+
+
+Implement a navigation bar (mixin):
+
+You can easily create reusable blocks of HTML very fast. In order to keep your
+project structure clean, you should place your mixins in separate files and only load them
+if they are required. 
+
+Mixin basic syntax
+
+// - Declaration (invoice-mixin.pug)
+mixin invoice 
+    .invoice-wrapper
+        h2 Invoice 
+            ul
+                li number 
+                li email
+
+Then whenever we need this mixin, we just use it in another template file as follows:
+
+section
+    +invoice <---- Just like this!
+    p This is a post about pug template engine, enjoy it!
+
+To create more powerfil mixins you can start introducing conditionals, looping etc... A must
+use feature to keep your code organized.
+
+// - More dynamic example 
+mixin header_block(title, link)
+    header
+    h3.main-title #{title}
+        ul
+            li
+                a(href='#{link}, target="_blank")
+    +header_block('Amazing title here!', 'features.html')
+
+Like mixins, PUG provides us with another similar feature called Blocks. A Block is a piece of
+code that can be replaced within a child template as many times and as many different blocks 
+you need.
+
+// home-template.pug
+
+extends layout.pug 
+
+block head 
+    script(src="/javascripts/jquery.js.js")
+
+block content
+    h1 My home page
+
+and in the other file...
+doctype 5
+html
+    head
+        title My title
+        block head <!-- will render the script call -->
+    body
+        #content
+            block content <!-- will render the h1 -->
+
+Block append & prepend
+The block feature can be extended even further by using the prepend or append blocks.
+Suppose for example you have a default scripts in a "scripts" block that you wish to 
+use on every page:
+
+//container-scripts.pug
+    .container
+        block scripts
+            script(src="/javasript/bootstrap.js")
+                script(src="/javascripts/app.js")
+
+Now in the other pug file:
+// main-layout.pug
+extends footer.pug
+
+append scripts
+    script(src="/javascripts/jquery.js")
+
+This adds the 2 scripts from footer.pug to the new file, by
+appending them after the bootstrap.js call out.
+
+Notice the append sripts, if we dont use the append when the block
+renders to the main-layout.pug it will overwrite the already present
+script declaration, so this way we are appending the script declaration to the 
+one that already exists in the file.
+
+Resulting in:
+<script src="/javascripts/bootstrap.js> </script>
+<script src="/javascripts/jquery.js> </script>
+<script src="/javascripts/app.js> </script>
+
+
+
+INHERITANCE IN PUG
+
+Pug allows you to inherit HTML structures by offering the extends command which can be used
+to achieve a modular approach to build web views, just like having a master view
+and a whole bunch of sub views, just like gaving a master view and a whole bunch of
+sub views that extend the master one.
+
+// file master-view.pug
+html
+    head
+        title My Blog
+        link(rel='stylesheet', href='/styles/bootstrap.min.css')
+    body
+        .container
+            block content
+        script(src="/scripts/angular.min.js")
+
+And in other view file 
+
+extends master-view.pug
+
+block content
+    .row
+        .col-md-3
+            nav
+        .col-md-9
+            h1 welcome
+
+CONDITIONALS IN PUG
+
+- var language = "Pug"
+
+if language == "PUG"
+    p Awesome
+else
+    p Not Awesome
+
+
+
+TODO: 
+Investigate whether or not it is worth using the Gulp system in tandem with PUG
