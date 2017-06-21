@@ -1,11 +1,22 @@
 h1{
-    color:purple;
+    color:#4745d1;
 }
 
 p{
-    color: gold;
+    color: white;
 }
 
-body{
-    color:black;
+.container{
+    background-color:#fb6754;
+}
+a{
+    text-decoration: None;
+}
+.navbar{
+    background-color: #4745d1;
+}
+.nanavigation-link{
+    font-family: sans-serif;
+    font-weight: bold;
+    color: white;
 }

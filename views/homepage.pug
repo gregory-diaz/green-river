@@ -1,8 +1,15 @@
+include ./navigation.pug
+include ./bootstrap-nav
 html
     head
         meta(charset='UTF-8')
         link(rel='stylesheet', href='/css/homepage.css')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+        //link(rel='stylesheet', href='/stylesheets/style.css')
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+        script(src='/bootstrap/js/bootstrap.min.js')
     body
     .container
-        h1 WELCOME
-        p NOW LEAVE 
+        +bootstrap-nav 
+    
