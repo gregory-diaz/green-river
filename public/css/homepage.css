@@ -1,22 +1,38 @@
 h1{
     color:#4745d1;
 }
+body{
+    margin:0px;
+    background-color:#25BA99;
+}
 
-p{
-    color: white;
+.navbar-form{
+    float: right;
 }
 
 .container{
-    background-color:#fb6754;
+    /*background-color:#25BA99;*/
 }
-a{
-    text-decoration: None;
-}
-.navbar{
-    background-color: #4745d1;
-}
-.nanavigation-link{
+
+.navigation-link{
     font-family: sans-serif;
     font-weight: bold;
     color: white;
+    -webkit-text-shadow: none;
+    text-shadow: none;
 }
+
+.navbar .nav>li>a:hover{
+    color: #FF5326;
+    cursor: pointer;
+}
+
+.navbar .nav>li>a {
+    float: none;
+    padding: 10px 15px 10px;
+    color: #777;
+    text-decoration: none;
+    text-shadow: none;
+}
+
+/*BD5202*/

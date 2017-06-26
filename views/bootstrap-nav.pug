@@ -1,14 +1,29 @@
 mixin bootstrap-nav
-    nav(class="navbar navbar-inverse")
-        .container
-            ul(class="nav navbar-nav")
-                li(class="navigation-link")
-                    a() Home
-                li
-                    a() XXX
-                li
-                    a() WHATEVER
-                
+    nav(class="navbar navbar-inverse" role="navigation")
+        .container-fluid
+            //-div(class="navbar-header")
+                button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar1")
+                    span(class="sr-only") Toggle
+                    span(class="icon-bar")
+                    span(class="icon-bar")
+                    span(class="icon-bar")//
+            div(class="navbar-collapse" id="navbar1")
+                ul(class="nav navbar-nav")
+                    li(class="navigation-link")
+                        a() Products
+                    li(class="navigation-link")
+                        a() News
+                    li(class="navigation-link")
+                        a() Contact 
+                    li(class="navigation-link")
+                        a() About
+                form(class="navbar-form navbar-right" role="search")
+                    div(class="input-group")
+                        input(type="text" class="form-control" placeholder="Search" name="q")
+                        span(class="input-group-btn")
+                            button(class="btn btn-default" type="submit")
+                                span(class="glyphicon glyphicon-search")
+            
 
 
         
