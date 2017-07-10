@@ -1,38 +1,133 @@
-h1{
-    color:#4745d1;
-}
 body{
     margin:0px;
-    background-color:#25BA99;
+    background-color:#fff;
+    width: 100%;
+    height: 100%;
+    font-family: 'Open Sans', sans-serif;
+
+}
+
+html{
+    height: 100%;
+    width:100%;
+}
+
+div.container-fluid.nav-and-banner{
+    padding: 0px;
 }
 
 .navbar-form{
     float: right;
 }
 
-.container{
-    /*background-color:#25BA99;*/
-}
-
 .navigation-link{
     font-family: sans-serif;
     font-weight: bold;
-    color: white;
+    color: #FfF;
     -webkit-text-shadow: none;
     text-shadow: none;
 }
 
 .navbar .nav>li>a:hover{
-    color: #FF5326;
+    color: #ff294c;
     cursor: pointer;
 }
 
 .navbar .nav>li>a {
+    font-size:18px;
     float: none;
     padding: 10px 15px 10px;
-    color: #777;
-    text-decoration: none;
-    text-shadow: none;
+    color: black;
+    //text-decoration: none;
+    //text-shadow: none;
 }
 
-/*BD5202*/
+.carousel.slide{
+    margin-bottom: 0px;
+}
+
+.carousel-indicators{
+    margin-right:50%;
+    margin-left:50%;
+    left: 0;
+    right: 0;
+    width: 100px;
+    top: auto;
+    bottom: 100px;
+    text-align: center;
+}
+
+.carousel-indicators.li{
+    float:left;
+}
+
+.btn{
+    background-color: black;
+    border-radius:0px;
+    height: 32px;
+}
+
+.btn:hover{
+    background-color: #ff294c;
+}
+
+.form-control.search-bar{
+    height:32px;
+    border-radius: 0px;
+}
+
+.carousel-control{
+    border: none;
+    background: none;
+}
+
+.arrows{
+    font-size: 30px; 
+}
+
+.carousel,.item,.active{
+   height:100%;
+ }
+.carousel-inner{
+    height:100%;
+}
+div.row.about-container{
+    background-color: black;
+    width: 725px;
+    height: 700px;
+    border-radius: 50%;
+    vertical-align: middle;
+}
+#aboutText{
+    color:#fb6754;
+    margin:70px;
+    font-size: 20px;
+}
+#aboutContainer{
+    background-color: white;
+}
+
+#blockContainer{
+    padding:140px;
+    background-color: #00457C;
+}
+
+h1.about-label{
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: #fb6754;
+}
+
+h1.block-header{
+    font-size: 80px;
+    font-weight: bold;
+    text-align: center;
+    color: #4745d1;
+}
+
+div.row.block-container{
+    background-color: #4745d1;
+    width: 950px;
+    height: 900px;
+}

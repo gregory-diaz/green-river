@@ -1,5 +1,9 @@
 include ./navigation.pug
+include ./bootstrap-banner
 include ./bootstrap-nav
+include ./about
+include ./block
+
 html
     head
         meta(charset='UTF-8')
@@ -12,5 +16,16 @@ html
         script(src='/bootstrap/js/bootstrap.min.js')
 
     body
-        +bootstrap-nav 
+        .container-fluid.nav-and-banner
+            +bootstrap-nav 
+            +bootstrap-banner
+        .container-fluid#aboutContainer
+            div(class="row about-container")
+                +about
+        .container-fluid#blockContainer
+            div(class="row block-container")
+                +block
+    
+
+        
     
