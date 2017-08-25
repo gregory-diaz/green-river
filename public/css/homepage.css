@@ -24,6 +24,12 @@ div.container-fluid.nav-and-banner{
     font-size: x-large;
 }
 
+#navbarBrandLargeScreen{
+    color: #ECF2FF;
+    font-weight: bolder;
+    font-size: x-large;
+}
+
 .navbar-wrapper {
   position: absolute;
   top: 0;
@@ -229,11 +235,6 @@ li > p:hover:before {
     color: blue;
 
 }
-
-
-
-
-
 /**************** End Hamburger Menu Styles ************/
 div.row.about-container{
     min-height:673;
