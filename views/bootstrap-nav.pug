@@ -1,3 +1,5 @@
+include ./hamburger-overlay
+
 mixin bootstrap-nav
     div(class="navbar-wrapper" id="defaultNav")
         div(class="container-fluid")
@@ -25,9 +27,11 @@ mixin bootstrap-nav
                         span(class="icon-bar")
                         span(class="icon-bar")
                         span(class="icon-bar")
-                a(class="navbar-brand" href="#") THE LOGO
+                span(class="navbar-brand" id="navbarBrandSmallScreen" href="#") THE LOGO
                 div(class="navbar-collapse collapse")
-                div(class="hamburger") &#9776;
+                div(class="hamburger" id="hamburgerMenu") &#9776;
+    +hamburger-overlay
+        
 
                 
 
