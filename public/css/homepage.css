@@ -83,12 +83,12 @@ div.container-fluid.nav-and-banner{
 
 li > p {
   position: relative;
-  color: whitesmoke;
+  color: #ECF2FF;
   text-decoration: none;
 }
 
 li > p {
-  color: whitesmoke;
+  color: #ECF2FF;
 }
 
 li > p:before {
@@ -98,7 +98,7 @@ li > p:before {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: whitesmoke;
+  background-color: #ECF2FF;
   visibility: hidden;
   -webkit-transform: scaleX(0);
   transform: scaleX(0);
@@ -248,12 +248,12 @@ div.row.about-container{
 
 #aboutText{
     text-align: center;
-    color:#fb6754;
+    color:white;
     margin:70px;
     font-size: 20px;
 }
 #aboutContainer{
-    background-color: red;
+    background-color: #2A66B0;
 }
 
 #blockContainer{
@@ -264,6 +264,7 @@ div.row.about-container{
 h1.about-label{
     font-size: 80px;
     font-weight: bold;
+    font-family:'Monoton', cursive;
     text-align: center;
     color: #fb6754;
 }

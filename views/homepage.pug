@@ -9,6 +9,7 @@ html
     head
         meta(charset='UTF-8')
         link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet")
         link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
         link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet")
         link(rel='stylesheet', href='/css/homepage.css')
@@ -21,11 +22,9 @@ html
         +bootstrap-nav
         +bootstrap-banner
         .container-fluid#aboutContainer
-            div(class="row about-container")
+            div(class="row")
                 +about
-        .container-fluid#blockContainer
-            div(class="row block-container")
-                +block
+        //.container-fluid#blockContainer
     
 
         
