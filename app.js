@@ -21,6 +21,9 @@ app.get("/", (req, res) => {
     res.render("homepage");
 });
 
+app.get("/products", (req,res) => {
+    res.render("product-detail")
+});
 // Require our routes into the application 
 require('./server/routes')(app);
 // app.get('*', (req, res) => res.status(200).send({

@@ -1,0 +1,33 @@
+html
+    head
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet")
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+        link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet")
+        link(rel='stylesheet', href='/css/homepage.css')
+        
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+        script(src='/bootstrap/js/bootstrap.min.js')
+        script(src='/scripts/product-detail.js')
+
+    body
+        h2() Product
+        form(id="productDetailForm")
+            div(class="form-label") Name
+                div()
+                    input(type="text" name="product-name") 
+            div(class="form-label") Price
+                div()
+                    input(type="text" name="product-price")
+            div(class="form-label") Description
+                div()
+                    textarea(name="product-description", cols="30", rows="10")
+            div(class="form-label") Reference URL
+                div()
+                    input(type="text" name="product-reference-url")
+            div(class="form-label") Add Image
+                button(id="addProductImage") Add Image
+            div(class="form-label") Save Product
+                button(id="saveProductDetails") Save
+

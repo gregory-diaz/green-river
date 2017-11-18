@@ -4,9 +4,10 @@ $( document ).ready(function() {
 });
 
 function addHandlers(){
-    openNav();
-    closeNav();
+    // openNav();
+    // closeNav();
     hamburgerMenuClick();
+    saveProductClick();
 }
 
 /* Open when someone clicks on the span element */
@@ -22,6 +23,29 @@ function closeNav() {
 function hamburgerMenuClick(){
 $('#hamburgerMenu').click(function(){
     openNav();
+});
+}
+
+function saveProductClick(){
+    $("#saveProductDetails").click(function(){
+        saveProductDetails();
+    })
+}
+
+//MOVE TO A SEPARATE JAVASCRIPT FILE PRODUCT-DETAIL.JS
+function saveProductDetails(){
+var data = $('#productDetailForm').serialize();
+debugger;
+$.ajax({
+    type: "POST",
+    url: "/product/create",
+    data: data,
+    success: function(data){
+
+    },
+    error: function(xhr){
+        alert('Unable to create product')
+    }
 })
 
 }

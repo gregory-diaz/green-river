@@ -22,12 +22,16 @@ div.container-fluid.nav-and-banner{
 #navbarBrandSmallScreen{
     font-weight: bolder;
     font-size: x-large;
+    /* font-family:'Monoton', cursive; */
+    
 }
 
 #navbarBrandLargeScreen{
     color: #ECF2FF;
+    /*font-family:'Monoton', cursive;*/
     font-weight: bolder;
     font-size: x-large;
+
 }
 
 .navbar-wrapper {
@@ -291,3 +295,12 @@ div.row.block-container{
     #carouselIndicators{display:none}
 }
 /******************** Testing Styles *******************/
+
+.form-label{
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.product-detail-form{
+    padding: 15px;
+}
