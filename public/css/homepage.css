@@ -304,3 +304,15 @@ div.row.block-container{
 .product-detail-form{
     padding: 15px;
 }
+
+.todo-title{
+    color:#fb6754;
+}
+
+.todo-textbox-label{
+    font-size:12px;
+}
+
+.todo-container-header{
+    font-size:20px;
+}

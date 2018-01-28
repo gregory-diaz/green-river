@@ -12,22 +12,16 @@ html
         script(src='/scripts/product-detail.js')
 
     body
-        h2() Product
-        form(id="productDetailForm")
-            div(class="form-label") Name
+        div(class="container" style="padding:40px;")
+            h2() Create Todo
+            form(id="productDetailForm")
                 div()
-                    input(type="text" name="product-name") 
-            div(class="form-label") Price
-                div()
-                    input(type="text" name="product-price")
-            div(class="form-label") Description
-                div()
-                    textarea(name="product-description", cols="30", rows="10")
-            div(class="form-label") Reference URL
-                div()
-                    input(type="text" name="product-reference-url")
-            div(class="form-label") Add Image
-                button(id="addProductImage") Add Image
-            div(class="form-label") Save Product
-                button(id="saveProductDetails") Save
+                    span(class="todo-textbox-label") Enter Todo 'title'
+                    div()
+                        input(type="text" id="title" name="title") 
+                    button(id="saveTodo") Save
+
+            div(class="todo-container-header") Todos:
+            div(id="todoContainer")
+
 

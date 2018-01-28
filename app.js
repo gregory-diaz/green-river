@@ -18,11 +18,18 @@ app.use(bodyParser.urlencoded({extended:false}));
 
 // Make hompage the root template
 app.get("/", (req, res) => {
+    //see if res.send(homepage.pug);
     res.render("homepage");
 });
 
 app.get("/products", (req,res) => {
     res.render("product-detail")
+});
+
+app.get("/todo-detail/:todoId", (req,res)=>{
+    console.log("***** Request Params *****")
+    console.log(req.params)
+    res.render("todo-detail", {todoID:req.params.todoId,todoTitle: req.params.title})
 });
 // Require our routes into the application 
 require('./server/routes')(app);

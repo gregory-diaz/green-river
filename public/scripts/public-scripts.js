@@ -4,8 +4,8 @@ $( document ).ready(function() {
 });
 
 function addHandlers(){
-    // openNav();
-    // closeNav();
+    openNav();
+    closeNav();
     hamburgerMenuClick();
     saveProductClick();
 }
@@ -26,26 +26,3 @@ $('#hamburgerMenu').click(function(){
 });
 }
 
-function saveProductClick(){
-    $("#saveProductDetails").click(function(){
-        saveProductDetails();
-    })
-}
-
-//MOVE TO A SEPARATE JAVASCRIPT FILE PRODUCT-DETAIL.JS
-function saveProductDetails(){
-var data = $('#productDetailForm').serialize();
-debugger;
-$.ajax({
-    type: "POST",
-    url: "/product/create",
-    data: data,
-    success: function(data){
-
-    },
-    error: function(xhr){
-        alert('Unable to create product')
-    }
-})
-
-}
