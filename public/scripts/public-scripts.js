@@ -7,7 +7,7 @@ function addHandlers(){
     openNav();
     closeNav();
     hamburgerMenuClick();
-    saveProductClick();
+    // saveProductClick();
 }
 
 /* Open when someone clicks on the span element */

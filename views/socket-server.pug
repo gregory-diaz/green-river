@@ -1,0 +1,29 @@
+html
+    head
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet")
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+        link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet")
+        link(rel='stylesheet', href='/css/homepage.css')
+        
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+        script(src='/bootstrap/js/bootstrap.min.js')
+        script(src='/scripts/product-detail.js')
+        script(src="/socket.io")
+           
+
+    body
+        div(class="container" style="padding:40px;")
+            h2() Create Fuck
+            form(id="productDetailForm")
+                div()
+                    span(class="todo-textbox-label") Enter Todo 'title'
+                    div()
+                        input(type="text" id="title" name="title") 
+                    button(id="saveTodo") Save
+
+            div(class="todo-container-header") Todos:
+            div(id="todoContainer")
+
+

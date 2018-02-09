@@ -1,0 +1,30 @@
+html
+    head
+        meta(charset='UTF-8')
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap.min.css')
+        link(href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet")
+        link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.min.css')
+        link(href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet")
+        link(rel='stylesheet', href='/css/homepage.css')
+        
+        script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
+        script(src='/bootstrap/js/bootstrap.min.js')
+        script(src='/scripts/todo-detail.js')
+
+    body
+        div(class="container" style="padding:40px;")
+            h2() Todo : "#{todoTitle}"
+            form(id="productDetailForm")
+                h1= todoID
+                div()
+                    span(class="todo-textbox-label") Add todo item content
+                    div()
+                        input(type="text" id="itemContent" name="itemContent") 
+                    button(id="bAddTodoItem") Add
+
+            div(class="todo-container-header") Todo Items:
+            div(id="todoContainer")
+        
+        input(type="text" name="todoId" id="todoId" value= todoID )
+
+
