@@ -17,7 +17,7 @@ console.log(path.join(__dirname, 'node_modules'))
 //Configure Express to use PUG
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.use(express.static(path.join(__dirname, 'node_modules')));
+app.use('static',express.static(path.join(__dirname, 'node_modules')));
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());

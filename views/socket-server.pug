@@ -10,12 +10,29 @@ html
         script(src='https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js')
         script(src='/bootstrap/js/bootstrap.min.js')
         script(src='/scripts/product-detail.js')
-        script(src="/socket.io")
+        script(src="/socket.io/socket.io.js")
            
 
     body
         div(class="container" style="padding:40px;")
-            h2() Create Fuck
+            h2() Create
+            script(src="/socket.io/socket.io.js")
+            
+            script.
+                
+                var socket = io('http://127.0.0.1:8000');
+
+                socket.on('news', function (data) {
+                    var div = document.getElementById("news-list");
+                    console.log("Rendering news : ",data);
+
+                    for(var i = 0;i < data.length;i++){
+                        var newsItem = data[i];
+                        div.innerHTML += "<h3>" + newsItem.title + ' <small>'+ newsItem.date + "</small></h3><br>";
+                    }
+                    socket.emit('my other event', { my: 'data' });
+                });
+            div(id="news-list")
             form(id="productDetailForm")
                 div()
                     span(class="todo-textbox-label") Enter Todo 'title'
