@@ -17,7 +17,7 @@ console.log(path.join(__dirname, 'node_modules'))
 //Configure Express to use PUG
 app.set("view engine", "pug");
 app.set("views", path.join(__dirname, "views"));
-app.use('static',express.static(path.join(__dirname, 'node_modules')));
+app.use('/static',express.static(path.join(__dirname, 'node_modules')));
 app.use(logger('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -29,19 +29,24 @@ app.get("/", (req, res) => {
     res.render("homepage");
 });
 
-app.get("/products", (req,res) => {
+// Page that lists all todos in the system and
+app.get("/todos", (req,res) => {
     res.render("product-detail")
 });
 
+// Page gets todo by ID and  
+app.get("/todo-detail/:todoId", (req,res)=>{
+    console.log("***** TODO Title ***********");
+    console.log(req.params);
+
+    res.render("todo-detail", {todoID:req.params.todoId,todoTitle: req.params.title})
+});
+
+// Experimental page with socket io
 app.get("/socket-server", (req,res) => {
     res.render("socket-server")
 });
 
-app.get("/todo-detail/:todoId", (req,res)=>{
-    console.log("***** Request Params *****")
-    console.log(req.params)
-    res.render("todo-detail", {todoID:req.params.todoId,todoTitle: req.params.title})
-});
 // Require our routes into the application 
 require('./server/routes')(app);
 // app.get('*', (req, res) => res.status(200).send({

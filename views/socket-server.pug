@@ -19,20 +19,32 @@ html
             script(src="/socket.io/socket.io.js")
             
             script.
-                
-                var socket = io('http://127.0.0.1:8000');
-
-                socket.on('news', function (data) {
-                    var div = document.getElementById("news-list");
-                    console.log("Rendering news : ",data);
-
-                    for(var i = 0;i < data.length;i++){
-                        var newsItem = data[i];
-                        div.innerHTML += "<h3>" + newsItem.title + ' <small>'+ newsItem.date + "</small></h3><br>";
-                    }
-                    socket.emit('my other event', { my: 'data' });
+                $(function(){
+                  var socket = io('http://127.0.0.1:8000');
+                  $('form').submit(function(){
+                      console.log($('#m').val())
+                      socket.emit('chat message', $('#m').val());
+                      $('#m').val('');
+                      return false;
+                  });
+                  socket.on('chat message', function(msg){
+                      $('#messages').append($('<li>').text(msg));
+                  })
                 });
-            div(id="news-list")
+                //- socket.on('news', function (data) {
+                //-     var div = document.getElementById("news-list");
+                //-     console.log("Rendering news : ",data);
+
+                //-     for(var i = 0;i < data.length;i++){
+                //-         var newsItem = data[i];
+                //-         div.innerHTML += "<h3>" + newsItem.title + ' <small>'+ newsItem.date + "</small></h3><br>";
+                //-     }
+                //-     socket.emit('my other event', { my: 'data' });
+                //- });
+            ul(id="messages")
+            form(action='')
+                input(id="m" autocomplete="off")
+                button() Send
             form(id="productDetailForm")
                 div()
                     span(class="todo-textbox-label") Enter Todo 'title'
